@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "TFGINA")(type "KiCad")(uri "${KIPRJMOD}/libraries/INA128P/easyeda2kicad.kicad_sym")(options "")(descr ""))
+  (lib (name "TFGLM")(type "KiCad")(uri "${KIPRJMOD}/libraries/LM35CAZNOPB/easyeda2kicad.kicad_sym")(options "")(descr ""))
+)
