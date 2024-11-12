@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "TFGINA")(type "KiCad")(uri "${KIPRJMOD}/libraries/INA128P/easyeda2kicad.pretty")(options "")(descr ""))
   (lib (name "TFGLM")(type "KiCad")(uri "${KIPRJMOD}/libraries/LM35CAZNOPB/easyeda2kicad.pretty")(options "")(descr ""))
+  (lib (name "TFGMOC")(type "KiCad")(uri "${KIPRJMOD}/libraries/MOC3010/easyeda2kicad.pretty")(options "")(descr ""))
 )
