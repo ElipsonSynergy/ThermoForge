@@ -3,4 +3,6 @@
   (lib (name "TFGINA")(type "KiCad")(uri "${KIPRJMOD}/libraries/INA128P/easyeda2kicad.kicad_sym")(options "")(descr ""))
   (lib (name "TFGLM")(type "KiCad")(uri "${KIPRJMOD}/libraries/LM35CAZNOPB/easyeda2kicad.kicad_sym")(options "")(descr ""))
   (lib (name "TFGMOC")(type "KiCad")(uri "${KIPRJMOD}/libraries/MOC3010/easyeda2kicad.kicad_sym")(options "")(descr ""))
+  (lib (name "TFGKBPC")(type "KiCad")(uri "${KIPRJMOD}/libraries/KBPC606/easyeda2kicad.kicad_sym")(options "")(descr ""))
+  (lib (name "TFGHLK")(type "KiCad")(uri "${KIPRJMOD}/libraries/HLKPM01/easyeda2kicad.kicad_sym")(options "")(descr ""))
 )
