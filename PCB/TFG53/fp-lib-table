@@ -9,4 +9,5 @@
   (lib (name "esp32devkitv1")(type "KiCad")(uri "${KIPRJMOD}/libraries/ESP32-DEVKIT-V1/esp32devkitv1.pretty")(options "")(descr ""))
   (lib (name "OLEDTHL27")(type "KiCad")(uri "${KIPRJMOD}/libraries/OLEDTHL27/easyeda2kicad.pretty")(options "")(descr ""))
   (lib (name "K2-1103DT-A4CW-04")(type "KiCad")(uri "${KIPRJMOD}/libraries/BTNK21103DT/easyeda2kicad.pretty")(options "")(descr ""))
+  (lib (name "logo")(type "KiCad")(uri "${KIPRJMOD}/logo.pretty")(options "")(descr ""))
 )
