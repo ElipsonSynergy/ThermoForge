@@ -2,6 +2,7 @@
 #include <max6675.h>
 #include <pins.h>
 #include "Pid.h"
+#include "Btn.h"
 
 
 //Comentarios
@@ -21,6 +22,10 @@ float Kp = 3, Ki = 0, Kd = 0;
 Pid pid(Kp, Ki, Kd, 20, reference, _numSensors);
 
 MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
+
+Btn enter(selectBtn, 1);
+Btn menu(menuBtn, 1); 
+Btn spin(spinBtn, 0);
 
 
 /**
@@ -55,11 +60,10 @@ void setup() {
  */
 void loop() {
 
-  // basic readout test, just print the current temp  
-   Serial.print("C = "); 
+  
+   Serial.print("Select = "); 
    Serial.println(thermocouple.readCelsius());
-   Serial.print("F = ");
-   Serial.println(thermocouple.readFahrenheit()); 
+
    delay(1000);
 
 }

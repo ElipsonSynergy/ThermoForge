@@ -48,8 +48,21 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
+      "drc_exclusions": [
+        "silk_edge_clearance|134400000|50000000|52dda45a-9071-47a1-a618-b66ad3b8d659|5fdbac3a-e146-49fc-bc6e-50b4b1d524f1",
+        "silk_edge_clearance|161600000|50000000|52dda45a-9071-47a1-a618-b66ad3b8d659|6a58614c-d5e9-4148-ad27-6e58c28fb87c",
+        "silk_edge_clearance|214880000|50000000|52dda45a-9071-47a1-a618-b66ad3b8d659|57136899-feab-4887-9cd1-e721c88db265",
+        "silk_edge_clearance|220120000|50000000|52dda45a-9071-47a1-a618-b66ad3b8d659|1c39e8c1-f7b8-44a7-9578-32bef68b8221",
+        "track_dangling|121697200|107664800|f73478be-c540-43e6-9687-bb5c1228cf1c|00000000-0000-0000-0000-000000000000",
+        "track_dangling|124944000|59944000|763ce6a7-96d0-46a8-83ce-0e0b1dfbee45|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "version": 2
       },
@@ -165,8 +178,21 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0,
+        0.0,
+        0.0,
+        0.508,
+        1.0,
+        3.0,
+        6.0
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -177,7 +203,9 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "pin_not_driven|2387600|914400|a5d7ca8f-1ee1-44ba-928b-951632d9f729|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -377,7 +405,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "ignore",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "error",
@@ -420,7 +448,20 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Default",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "+3.3V"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "+5V"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -428,7 +469,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../3D/Termoformadora/tfg53.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

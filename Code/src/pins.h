@@ -12,6 +12,13 @@
 #define thermoCS  5
 #define thermoCLK  18
 
+#define selectBtn  2
+#define menuBtn  15
+#define spinBtn  4
+
+#define SCL 22
+#define SDA 21
+
 
 
 #endif 

@@ -1,5 +1,4 @@
 #include "Pid.h"
-#include "Motor.h"
 
 Pid::Pid(float cKp, float cKi, float cKd, int cSetPoint, int Vreference, int numSensors) : Kp(cKp), Ki(cKi), Kd(cKd), setPoint(cSetPoint), _numSensors(numSensors), reference(Vreference), proportional (0), integral(0), derivative(0), proportional_past
 (0), control_output(0), position(0), last_value(0) {

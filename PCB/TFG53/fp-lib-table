@@ -5,4 +5,8 @@
   (lib (name "TFGMOC")(type "KiCad")(uri "${KIPRJMOD}/libraries/MOC3010/easyeda2kicad.pretty")(options "")(descr ""))
   (lib (name "TFGKBPC")(type "KiCad")(uri "${KIPRJMOD}/libraries/KBPC606/easyeda2kicad.pretty")(options "")(descr ""))
   (lib (name "TFGHLK")(type "KiCad")(uri "${KIPRJMOD}/libraries/HLKPM01/easyeda2kicad.pretty")(options "")(descr ""))
+  (lib (name "digikey-footprints")(type "KiCad")(uri "${KIPRJMOD}/libraries/digikey-kicad-library-master/digikey-footprints.pretty")(options "")(descr ""))
+  (lib (name "esp32devkitv1")(type "KiCad")(uri "${KIPRJMOD}/libraries/ESP32-DEVKIT-V1/esp32devkitv1.pretty")(options "")(descr ""))
+  (lib (name "OLEDTHL27")(type "KiCad")(uri "${KIPRJMOD}/libraries/OLEDTHL27/easyeda2kicad.pretty")(options "")(descr ""))
+  (lib (name "K2-1103DT-A4CW-04")(type "KiCad")(uri "${KIPRJMOD}/libraries/BTNK21103DT/easyeda2kicad.pretty")(options "")(descr ""))
 )
