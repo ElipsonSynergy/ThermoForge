@@ -27,7 +27,6 @@ class Btn {
      *
      * @return El valor del sensor botón.
      */
-    int DigitalValue();
     float value();
 };
 

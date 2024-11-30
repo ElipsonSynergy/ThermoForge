@@ -9,22 +9,28 @@
 class Pid {
     private:
 
-    float Kp;
-    float Ki;
-    float Kd;
+    
     int _numSensors;
-    int setPoint;
-    int reference;
-    int position;
-    int proportional ;
-    int integral;
-    int derivative;
+    float setPoint;
+    float maxSat;
+    float minSat;
+    float position;
+    float proportional ;
+    float integral;
+    float derivative;
     int proportional_past;
     float control_output;
-    int last_value;
+    float last_value;
+    float rateTime;
 
 
     public:
+
+    float Kp;
+    float Ki;
+    float Kd;
+
+    
     /**
      * @brief Constructor de la clase Pid.
      * @param cKp Valor del coeficiente proportional .
@@ -34,14 +40,14 @@ class Pid {
      * @param Vreference Valor de referencia.
      * @param numSensors Número de sensores.
      */
-    Pid(float cKp, float cKi, float cKd, int cSetPoint, int Vreference, int numSensors);
+    Pid(float cminSat, float cmaxSat, int numSensors, float crateTime);
 
     /**
      * @brief Método para realizar el seguimiento de la posición.
      * @param position Posición actual.
-     * @return Valor de salida del controlador.
+     * @return Valor de salida del controlador. 
      */
-    float traking(int position);
+    float traking(int position, int setPoint);
 
     /**
      * @brief Método para calcular el error.
@@ -49,6 +55,8 @@ class Pid {
      * @return Valor del error calculado.
      */
     int calculateError(int* sensors_values);
+
+    float* tuning(float Kp, float T, float L, int method);
 
 };
 

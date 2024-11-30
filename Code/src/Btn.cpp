@@ -1,7 +1,12 @@
 #include "Btn.h"
 
 Btn::Btn(int pinNumber, int btntype) : pin(pinNumber), type(btntype) {
-    pinMode(pin, INPUT);
+    
+    if (type == 1) {
+        pinMode(pin, INPUT_PULLUP);
+    } else if (type == 0) {
+        pinMode(pin, INPUT);
+    } 
 }
 
 /**
@@ -9,16 +14,10 @@ Btn::Btn(int pinNumber, int btntype) : pin(pinNumber), type(btntype) {
  *
  * @return El valor digital del sensor Qtr (0 o 1).
  */
-int Btn::DigitalValue() {
-    if (type == 1) {
-        int value = digitalRead(pin);
-        return value;
-    } 
-}
-
 float Btn::value() {
-    if (type == 0) {
-        int analogReading = analogRead(pin);
-        return analogReading;
-    }  
+    if (type == 1) {
+        return digitalRead(pin);
+    } else if (type == 0) {
+        return analogRead(pin);
+    } 
 }
