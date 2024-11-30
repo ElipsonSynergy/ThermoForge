@@ -24,6 +24,8 @@ const char *materiales[] = {"BYPACK", "PE", "PP", "ABS", "PVC", "PET", "PS", "PC
 int temperaturas[] = {160, 140, 170, 185, 155, 240, 105, 175};
 int cant = sizeof(materiales) / sizeof(materiales[0]);
 
+float max_firing_pulse = (1/60)*10^3;
+
 //PID
 int minTem = 1000; int maxTem= 2000;
 int _numsensors = 1; float rateTime = 1;
@@ -37,7 +39,9 @@ bool zero_cross_detected() {
 
 void control(float maximum_firing_delay, float setPoint) {
 
-  float PID_value = pid.traking(thermocouple.readCelsius(), setPoint);
+  float temp = thermocouple.readCelsius();
+
+  float PID_value = pid.traking(temp, setPoint);
 
   int zero_cross = zero_cross_detected();
   
@@ -101,6 +105,9 @@ void loop() {
   else{
     tempActual = temperaturas[pot.option];
   }
+
   screen.mostrarTitulo("Termoformando a " + String(tempActual), "", 1, 2);
+
+  control(max_firing_pulse, tempActual);
 
 }
