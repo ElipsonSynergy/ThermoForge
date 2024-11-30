@@ -1,12 +1,23 @@
 #include <Arduino.h>
+#include <pins.h>
+
 #include <max6675.h>
+
 #include "imagenes.h"
 #include "Screen.h"
 #include "Pot.h"
-
-#include <pins.h>
-#include "Pid.h"
 #include "Btn.h"
+
+#include "Pid.h"
+
+
+MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
+
+Screen screen(display);
+
+Btn enter(selectBtn, 1); Btn menu(menuBtn, 1);  
+Pot potenciometroMenu(spinBtn, cant+2); Pot potenciometroTemp(spinBtn, 401);
+
 
 // Variables globales
 const char *materiales[] = {"BYPACK", "PE", "PP", "ABS", "PVC", "PET", "PS", "PC"};
@@ -18,14 +29,27 @@ int minTem = 1000; int maxTem= 2000;
 int _numsensors = 1; float rateTime = 1;
 Pid pid(minTem, maxTem, _numsensors, rateTime);
 
-MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
+Btn zeroCross(zeroCrossing, 0);
 
-Screen screen(display);
+bool zero_cross_detected() {
+  return !zeroCross.value();
+}
 
-Btn enter(selectBtn, 1);
-Btn menu(menuBtn, 1); 
-Pot potenciometroMenu(spinBtn, cant+2);
-Pot potenciometroTemp(spinBtn, 401);
+void control(float maximum_firing_delay, float setPoint) {
+
+  float PID_value = pid.traking(thermocouple.readCelsius(), setPoint);
+
+  int zero_cross = zero_cross_detected();
+  
+  if (zero_cross)  {
+    delayMicroseconds(maximum_firing_delay - PID_value); //This delay controls the power
+    digitalWrite(triac, HIGH);
+    delayMicroseconds(100);
+    digitalWrite(triac, LOW);
+    zero_cross = false;
+  }
+}
+
 
 // Variables Locales
 int opcionActual = 999;
@@ -42,6 +66,8 @@ void setup() {
   screen.iniciar();
   screen.mostrarImagen(HOME);
   delay(5000);
+
+  pinMode(triac, OUTPUT);
 
 }
 

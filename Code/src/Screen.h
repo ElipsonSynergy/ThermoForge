@@ -5,7 +5,10 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#include <pins.h>
+//Instancia Pantalla
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1  // Reset pin (if not used, set to -1)
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
@@ -28,7 +31,7 @@ class Screen {
 
         // Mostrar la barra de progreso
         void progressBar(int valor, int maxValor, String title);
-        
+
     private:
         Adafruit_SSD1306 &oled;
 };

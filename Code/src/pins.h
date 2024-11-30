@@ -12,17 +12,17 @@
 #define thermoCS  5
 #define thermoCLK  18
 
+#define zeroCrossing 19
+#define triac 4
+
 #define selectBtn  2
 #define menuBtn  15
 #define spinBtn  4
 
+#define sound 35
+
 #define SCL 22
 #define SDA 21
-
-//Instancia Pantalla
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
-#define OLED_RESET -1  // Reset pin (if not used, set to -1)
 
 
 
