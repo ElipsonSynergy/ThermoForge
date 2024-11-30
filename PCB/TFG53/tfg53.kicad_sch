@@ -5,7 +5,9 @@
   (paper "A4")
 
   (title_block
-    (title "Thermo Forge 53 ")
+    (title "ThermoForge TFG-ET V1")
+    (date "2024-11-29")
+    (company "ET")
   )
 
   (lib_symbols
